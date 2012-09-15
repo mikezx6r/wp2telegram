@@ -1,0 +1,33 @@
+defaultTasks 'build'
+
+apply plugin: 'scala'
+
+repositories { mavenCentral() }
+
+ext {
+	scalaVersion = '2.9.2'
+	scalaIoVersion = '0.4.1-seq'
+}
+
+dependencies {
+	// Libraries needed to run the scala tools
+	scalaTools "org.scala-lang:scala-compiler:$scalaVersion"
+	scalaTools "org.scala-lang:scala-library:$scalaVersion"
+
+	// Libraries needed for scala api
+	compile ([
+		"org.scala-lang:scala-library:$scalaVersion",
+		"com.dongxiguo:zero-log_$scalaVersion:0.1.2",
+		"com.github.scala-incubator.io:scala-io-core_$scalaVersion:$scalaIoVersion",
+		"com.github.scala-incubator.io:scala-io-file_$scalaVersion:$scalaIoVersion"
+	])
+
+	testCompile 'org.scalatest:scalatest_2.9.0:2.0.M3'
+}
+
+test << {
+	ant.taskdef(name: 'scalatest', classname: 'org.scalatest.tools.ScalaTestAntTask', classpath: classpath.asPath)
+	ant.scalatest(runpath: testClassesDir, haltonfailure: 'true', fork: 'false') { reporter(type: 'stdout') }
+}
+
+task wrapper(type: Wrapper) { gradleVersion = '1.1' }
