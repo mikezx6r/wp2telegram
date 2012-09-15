@@ -1,6 +1,9 @@
 defaultTasks 'build'
 
 apply plugin: 'scala'
+apply plugin: 'application'
+
+mainClassName = 'ca.wilmik.processor.ConvertWpSiteToTelegram'
 
 repositories { mavenCentral() }
 
