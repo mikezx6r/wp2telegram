@@ -7,6 +7,8 @@ mainClassName = 'ca.wilmik.processor.ConvertWpSiteToTelegram'
 
 repositories { mavenCentral() }
 
+version = '1.0.0'
+
 ext {
 	scalaVersion = '2.9.2'
 	scalaIoVersion = '0.4.1-seq'
