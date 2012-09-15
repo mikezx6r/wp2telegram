@@ -9,6 +9,6 @@ If you have issues with the converter, please let me know, and I'll do my best t
 
 The code is written in Scala, and uses Gradle for building. 
 
-To run the converter, [download[(https://github.com/mikezx6r/wp2telegram/downloads) the wp2telegram-1.0.0.zip file, unzip, and execute the appropriate file in the bin directory. 
+To run the converter, [download](https://github.com/mikezx6r/wp2telegram/downloads) the wp2telegram-1.0.0.zip file, unzip, and execute the appropriate file in the bin directory. 
 
 The scripts assume you already have java installed and have JAVA_HOME defined.
